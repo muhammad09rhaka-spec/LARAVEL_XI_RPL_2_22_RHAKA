@@ -1,11 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController; // Jangan lupa import Controller ini
 
-Route::get('/', function () {
-    return view('pages.home');
-});
-
-Route::get('/about', function () {
-    return view('pages.about');
-});
+// Mengarahkan ke Controller
+Route::get('/', [PageController::class, 'home']);
+Route::get('/about', [PageController::class, 'about']);
